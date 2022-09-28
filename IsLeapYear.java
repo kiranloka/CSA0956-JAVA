@@ -1,35 +1,34 @@
-import java.time.LocalDate;
 import java.util.Scanner;
-public class IsLeapYear {
-   public static void main(String args[]) {
+ class leap {
+   public static void main(String[] args){
+	try{
+	int date;
+      System.out.println("enter date :: ");
       Scanner sc = new Scanner(System.in);
-      System.out.println("Enter the year: ");
-      int year = sc.nextInt();
-      if(year==19.47){
-          System.out.println("Invalid input enter int values");
-      }
-    
-      System.out.println("Enter the month: ");
-      int month=sc.nextInt();
-      if(month==00){
-        System.out.println("month cannot be zero please enter valid input");
-      }
-      System.out.println("Enter the day: ");
-      int day=sc.nextInt();
-      if(day==00){
-        System.out.println("Day values cannot be zero please enter valid input");
-      }
-    
-      LocalDate givenDate = LocalDate.of(year,month,day);
-    
-      boolean bool = givenDate.isLeapYear();
-      
-      
+      date = sc.nextInt();
+	int month;
+      System.out.println("enter month :: ");
+      Scanner sc1 = new Scanner(System.in);
+      month = sc.nextInt();
+      int year;
+      System.out.println("enter an Year :: ");
+      year = sc.nextInt();
+      Scanner sc2 = new Scanner(System.in);
+      System.out.println("the entered date is:"+date+"/"+month+"/"+year);
+     
+	if((date<=31)&& (date>0) && (month<=12)){
 
-      if(bool){
-         System.out.println("Given year is a leap year ");
-      }else{
-         System.out.println("Given year is not a leap year ");
-      }
+      if (((year % 4 == 0) && (year % 100!= 0)) || (year%400 == 0))
+         System.out.println("Specified year is a leap year");
+      else
+         System.out.println("Specified year is not a leap year");
+}
+else{
+	System.out.println("enter valid data");
+}
+}
+catch(Exception e){
+	System.out.println("enter valid data");
    }
+}
 }
